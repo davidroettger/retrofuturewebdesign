@@ -1,0 +1,61 @@
+/* Import dependency (from node_modules) … */
+@import "normalize.css";
+
+$border-width: 4px;
+
+/* Your styles here … */
+
+
+
+.container {
+	padding:10px;
+	font-family: 'IM Fell English SC', serif;
+	perspective: 20px;
+}
+
+p {
+	font-weight:800;
+	font-size:16px;
+	transition: all 2s ease-out;
+	padding:1em;
+
+
+	
+}
+
+
+.gedicht {
+ display: flex; 
+left:0;
+ color:black;
+ padding: 10px;
+ transition: all 5s ease-out;
+	 
+}
+
+.zoom {
+	transform: rotatey(720deg) scale(3) translate3d(10px,100px,0px);
+	color:black;
+}
+
+.panther {
+	position:absolute;
+	width:600px;
+	height:500px;
+	left:0;
+	overflow:hidden;
+	perspective:500px;
+	filter: blur(0px);
+	transition: all 2s ease-out;
+
+
+
+}
+
+.panther img {
+		width:600px;
+		transform: scale(2.2);
+		transform: translate3d(0px,0px,0px);
+		transform: rotateY(0deg);
+		filter: url(#myfilter);
+}
