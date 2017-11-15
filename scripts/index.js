@@ -11,7 +11,8 @@ function Divs(idofdiv,numberofdivs)  {
   this.creatediv = function () {
     var container = document.querySelector(idofdiv);
 
-    // create divs based on argument 
+    // create divs // the argument should be used as the name of the parent div 
+    // you can throw in every div //
 
     for (var i = 0 ; i < numberofdivs; i++) {
       var outerlayer = container.appendChild(document.createElement("DIV"));
@@ -21,27 +22,23 @@ function Divs(idofdiv,numberofdivs)  {
 
     }
 }
-    // looks for classes and change scale properties 
+    // looks for classes and change the scale properties of the inner div
   this.scaleClasses = function () {
     for (var i = 0; i < numberofdivs; i++) {
       var selector = document.querySelector(".innerlayer_"+i);
       selector.style.transform = "scale(" + i/550 + ")" 
     }
   }
-
+  // looks for classes and change rotate properties of the outer div
   this.scaleOuterDivs = function () {
     for (var i = 0; i < numberofdivs; i++) {
       var selector = document.querySelector(".outerlayer_"+i);
       selector.style.transform = "rotate(45deg)" 
     }
   }
-
-
-
-
 }
 
-// Initialize new Div
+// Initialize new Divs Object
 
 var divs =  new Divs(".selection_1",2000);
 
