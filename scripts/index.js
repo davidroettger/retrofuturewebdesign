@@ -20,18 +20,25 @@ function Divs(idofdiv,numberofdivs)  {
       innerlayer.classList.add("innerlayer_"+i);
 
     }
-
+}
     // looks for classes and change scale properties 
   this.scaleClasses = function () {
     for (var i = 0; i < numberofdivs; i++) {
       var selector = document.querySelector(".innerlayer_"+i);
-      selector.style.transform = "scale(" + i/1000 + ")" 
+      selector.style.transform = "scale(" + i/550 + ")" 
+    }
+  }
 
-}
-}
+  this.scaleOuterDivs = function () {
+    for (var i = 0; i < numberofdivs; i++) {
+      var selector = document.querySelector(".outerlayer_"+i);
+      selector.style.transform = "rotate(45deg)" 
+    }
+  }
 
 
-}
+
+
 }
 
 // Initialize new Div
@@ -43,5 +50,7 @@ console.log(divs.idofdiv);
 // Execute Method of divs Object
 divs.creatediv();
 divs.scaleClasses();
+divs.scaleOuterDivs();
+
 
 
