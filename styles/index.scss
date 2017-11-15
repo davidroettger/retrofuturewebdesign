@@ -11,25 +11,55 @@ $border-width: 4px;
 	padding:10px;
 	font-family: 'IM Fell English SC', serif;
 	perspective: 20px;
+
 }
 
 .outerlayer {
-border: 1px solid black;
-width: 100px; 
-height: 100px; 
-position: absolute;
-overflow:hidden; 
+	//border: 1px solid black;
+	max-width: 200px; 
+	//height: 100px; 
+	position: absolute;
+	overflow:hidden; 
+	background-image:url("../assets/panther.jpg");
+	background-repeat:no-repeat;
+	transition: transform 0.1s ease-out;
+	background-position: 30% 75%;
 }
+
+.moveouter {
+	transform: perspective(500px) translate3d(10vw,28vh,0) scale(2);
+	transition: transform 0.2s ease-out;
+}
+
 
 .innerlayer {
-	border: 1px solid blue;
-	width: 100px; 
-	height: 100px; 
+	//border: 1px solid blue;
 	position:relative;
-	transform: translate3d(-1px,-1px,0);
-	transition: transform 1s ease-out;
+	transform: translate3d(200px,-1px,0);
+	transition: transform 0.2s ease-out;
 }
 
+
+
 .move {
-	transform: translate3d(100px,-1px,0);
+	transform: translate3d(-1px,-1px,0);
+}
+
+.clicked p {
+	transform: scale(2.0); 
+	}
+
+p {
+	font-size:20px;
+	padding:1em;
+}
+
+.selection_1 {
+}
+
+.selection_1 div {
+	width:25px;
+	float:left;
+	height:15px;
+	border:1px solid black;
 }

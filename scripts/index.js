@@ -1,34 +1,47 @@
 
-var container = document.querySelector(".container");
+var gedicht = {
+  titel:"Der Panther",
+  strophen: ["Sein Blick ist vom Vorübergehn der Stäbe so müd geworden, dass er nichts mehr hält. Ihm ist, als ob es tausend Stäbe gäbe und hinter tausend Stäben keine Welt.", "Der weiche Gang geschmeidig starker Schritte, der sich im allerkleinsten Kreise dreht, ist wie ein Tanz von Kraft um eine Mitte, in der betäubt ein großer Wille steht.", "Nur manchmal schiebt der Vorhang der Pupille sich lautlos auf -. Dann geht ein Bild hinein, geht durch der Glieder angespannte Stille - und hört im Herzen auf zu sein." ] 
+ }
 
-var create_div_outer = document.createElement("DIV");
+// Object Prototype / Constructor / Argument ist eine Div ID / 
 
-var create_div_inner = document.createElement("DIV");
+function Divs(idofdiv,numberofdivs)  {
+  this.idofdiv = idofdiv,
+  this.creatediv = function () {
+    var container = document.querySelector(idofdiv);
 
-var outerlayer = container.appendChild(create_div_outer)
+    // create divs based on argument 
 
-outerlayer.classList.add("outerlayer");
+    for (var i = 0 ; i < numberofdivs; i++) {
+      var outerlayer = container.appendChild(document.createElement("DIV"));
+      outerlayer.classList.add("outerlayer_"+i);
+      var innerlayer = outerlayer.appendChild(document.createElement("DIV"));
+      innerlayer.classList.add("innerlayer_"+i);
 
-var innerlayer = document.querySelector(".outerlayer").appendChild(create_div_inner);
+    }
 
-innerlayer.classList.add("innerlayer");
+    // looks for classes and change scale properties 
+  this.scaleClasses = function () {
+    for (var i = 0; i < numberofdivs; i++) {
+      var selector = document.querySelector(".innerlayer_"+i);
+      selector.style.transform = "scale(" + i/1000 + ")" 
 
-
-//mouseover add class move to innerlayer to animate the x position
-
-outerlayer.addEventListener('mouseover', function() {
-  innerlayer.classList.add("move");
-}, false)
-
-
-outerlayer.addEventListener('mouseout', function() {
-  innerlayer.classList.remove("move");
-}, false)
-
-
-
-
+}
+}
 
 
+}
+}
+
+// Initialize new Div
+
+var divs =  new Divs(".selection_1",2000);
+
+console.log(divs.idofdiv);
+
+// Execute Method of divs Object
+divs.creatediv();
+divs.scaleClasses();
 
 
