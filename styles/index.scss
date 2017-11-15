@@ -5,11 +5,9 @@ $border-width: 4px;
 
 /* Your styles here … */
 
-
-
 .container {
 	padding:10px;
-	font-family: 'IM Fell English SC', serif;
+	font-family: 'Ubuntu Mono', monospace;
 	perspective: 20px;
 
 }
@@ -64,4 +62,15 @@ p {
 	float:left;
 	height:25px;
 	border:1px solid black;
+	transition: transform 1s ease-out;
+}
+
+.rotate {
+	transform:rotate(45deg);
+}
+
+.zoom {
+	transition: transform 1s ease-out;
+	transform:scale(5) translate3d(10vw,10vh,0);
+	z-index:100;
 }

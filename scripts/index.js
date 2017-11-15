@@ -30,17 +30,16 @@ function Divs(idofdiv,numberofdivs)  {
     }
   }
   // looks for classes and change rotate properties of the outer div
-  this.scaleOuterDivs = function () {
+  this.rotateOuterDivs = function () {
     for (var i = 0; i < numberofdivs; i++) {
       var selector = document.querySelector(".outerlayer_"+i);
-      selector.style.transform = "rotate(45deg)" 
+      selector.classList.toggle("rotate")
+      //selector.style.transform = "rotate(45deg)";
     }
   }
   
   //pick random outer divs and change class for coloration 
   this.pickandcolorclass = function () {
-
-    
     for (var i = 0; i < numberofdivs/25; i++) {
       var randomnumber = Math.round(getRandomArbitrary(1,numberofdivs)); 
       var selector = document.querySelector(".outerlayer_"+randomnumber);
@@ -48,7 +47,26 @@ function Divs(idofdiv,numberofdivs)  {
     }
   }
 
+  this.addEventListenerRect = function() {
+    for (var i = 0; i < 50; i++) { 
+      (function() {
+      var selector = document.querySelector(".outerlayer_"+i);
+      selector.addEventListener("click", function(){
+        var text = document.createTextNode(gedicht.strophen[1]);
+        selector.classList.toggle("zoom");
+        selector.appendChild(text);
+        
+
+      }
+
+        )
+      }());
+
+    }     
+  }
+
 }
+
 
 
 // Funktion für Random Numbers (Coloration)
@@ -66,8 +84,9 @@ console.log(divs.idofdiv);
 // Execute Method of divs Object
 divs.creatediv();
 divs.scaleClasses();
-divs.scaleOuterDivs();
+divs.rotateOuterDivs();
 divs.pickandcolorclass();
+divs.addEventListenerRect();
 
 
 
