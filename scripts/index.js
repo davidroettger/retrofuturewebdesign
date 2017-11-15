@@ -36,6 +36,25 @@ function Divs(idofdiv,numberofdivs)  {
       selector.style.transform = "rotate(45deg)" 
     }
   }
+  
+  //pick random outer divs and change class for coloration 
+  this.pickandcolorclass = function () {
+
+    
+    for (var i = 0; i < numberofdivs/25; i++) {
+      var randomnumber = Math.round(getRandomArbitrary(1,numberofdivs)); 
+      var selector = document.querySelector(".outerlayer_"+randomnumber);
+      selector.classList.add("colored");
+    }
+  }
+
+}
+
+
+// Funktion für Random Numbers (Coloration)
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
 }
 
 // Initialize new Divs Object
@@ -48,6 +67,7 @@ console.log(divs.idofdiv);
 divs.creatediv();
 divs.scaleClasses();
 divs.scaleOuterDivs();
+divs.pickandcolorclass();
 
 
 

@@ -39,6 +39,9 @@ $border-width: 4px;
 	transition: transform 0.2s ease-out;
 }
 
+.colored {
+	background-color:red;
+}
 
 .move {
 	transform: translate3d(-1px,-1px,0);
