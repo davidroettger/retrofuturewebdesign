@@ -13,46 +13,23 @@ $border-width: 4px;
 	perspective: 20px;
 }
 
-p {
-	font-weight:800;
-	font-size:16px;
-	transition: all 2s ease-out;
-	padding:1em;
-	}
-
-
-.gedicht {
- display: flex; 
-left:0;
- color:black;
- padding: 10px;
- transition: all 5s ease-out;
-	 
+.outerlayer {
+border: 1px solid black;
+width: 100px; 
+height: 100px; 
+position: absolute;
+overflow:hidden; 
 }
 
-.zoom {
-	transform: scale(3) translate3d(10px,100px,0px);
-	color:black;
+.innerlayer {
+	border: 1px solid blue;
+	width: 100px; 
+	height: 100px; 
+	position:relative;
+	transform: translate3d(-1px,-1px,0);
+	transition: transform 1s ease-out;
 }
 
-.panther {
-	position:absolute;
-	width:600px;
-	height:500px;
-	left:0;
-	overflow:hidden;
-	perspective:500px;
-	filter: blur(0px);
-	transition: all 2s ease-out;
-
-
-
-}
-
-.panther img {
-		width:600px;
-		transform: scale(2.2);
-		transform: translate3d(0px,0px,0px);
-		transform: rotateY(0deg);
-		filter: url(#myfilter);
+.move {
+	transform: translate3d(100px,-1px,0);
 }
