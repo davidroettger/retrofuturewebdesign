@@ -1,3 +1,3 @@
 # A lot of divs
 
-![Alt text](relative/path/to/img.jpg?raw=true "DIV Experiments")
+![Alt text](images/screenshot.jpg?raw=true "DIV Experiments")
