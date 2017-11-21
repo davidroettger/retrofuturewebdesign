@@ -1,7 +1,7 @@
 
 var gedicht = {
-  titel:"Der Panther",
-  strophen: ["Sein Blick ist vom Vorübergehn der Stäbe so müd geworden, dass er nichts mehr hält. Ihm ist, als ob es tausend Stäbe gäbe und hinter tausend Stäben keine Welt.", "Der weiche Gang geschmeidig starker Schritte, der sich im allerkleinsten Kreise dreht, ist wie ein Tanz von Kraft um eine Mitte, in der betäubt ein großer Wille steht.", "Nur manchmal schiebt der Vorhang der Pupille sich lautlos auf -. Dann geht ein Bild hinein, geht durch der Glieder angespannte Stille - und hört im Herzen auf zu sein." ] 
+  titel:"Kraftwerk – Nummern",
+  strophen: ["Eins, zwei, drei, vier   Fünf, sechs, sieben, acht    Uno, due    Três, quatro    One, two    Ichi, ni, san, chi    Adjin, dva, tri   Li, tva, tri"] 
  }
 
 // Object Prototype / Constructor / Argument ist eine Div ID / 
@@ -47,16 +47,15 @@ function Divs(idofdiv,numberofdivs)  {
     }
   }
 
+  //click div --> zoom / text
   this.addEventListenerRect = function() {
-    for (var i = 0; i < 50; i++) { 
+    for (var i = 0; i < numberofdivs; i++) { 
       (function() {
       var selector = document.querySelector(".outerlayer_"+i);
       selector.addEventListener("click", function(){
-        var text = document.createTextNode(gedicht.strophen[1]);
+        var text = document.createTextNode(gedicht.strophen[0]);
         selector.classList.toggle("zoom");
         selector.appendChild(text);
-        
-
       }
 
         )
@@ -68,8 +67,7 @@ function Divs(idofdiv,numberofdivs)  {
 }
 
 
-
-// Funktion für Random Numbers (Coloration)
+// Funktion für Random Numbers (for coloration)
 
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
@@ -77,7 +75,7 @@ function getRandomArbitrary(min, max) {
 
 // Initialize new Divs Object
 
-var divs =  new Divs(".selection_1",2000);
+var divs =  new Divs(".selection_1",3000);
 
 console.log(divs.idofdiv);
 
@@ -86,7 +84,7 @@ divs.creatediv();
 divs.scaleClasses();
 divs.rotateOuterDivs();
 divs.pickandcolorclass();
-divs.addEventListenerRect();
+// divs.addEventListenerRect();
 
 
 

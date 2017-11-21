@@ -5,10 +5,19 @@ $border-width: 4px;
 
 /* Your styles here … */
 
+
+h1 {
+
+}
+
 .container {
 	padding:10px;
 	font-family: 'Ubuntu Mono', monospace;
+	font-family: 'VT323', monospace;
 	perspective: 20px;
+	padding: 0 5vw;
+	font-size:25px;
+	font-weight:200;
 
 }
 
@@ -39,6 +48,7 @@ $border-width: 4px;
 
 .colored {
 	background-color:red;
+	opacity:1;
 }
 
 .move {
@@ -54,8 +64,7 @@ p {
 	padding:1em;
 }
 
-.selection_1 {
-}
+
 
 .selection_1 div {
 	width:25px;
