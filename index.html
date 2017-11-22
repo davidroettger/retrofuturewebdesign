@@ -5,20 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Projekt</title>
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+<!--   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> -->
   <link href="./styles/index.css" rel="stylesheet">
+
+
+
 </head>
 
 
 
 <body>
+
+  <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+        .filtered{
+          filter: url(#myfilter);
+          …
+        }
+      ]]>
+    </style>
+
+    <filter id="myfilter">
+      
+<feConvolveMatrix order="4,4" 
+   kernelMatrix="
+   1 1 1 1
+   0 1 0 1
+   1 1 1 1 
+   1 0 0 1" in="SourceAlpha" result="BEVEL" />
+
+<!-- offset extrusion: -->
+
+<feOffset dx="10" dy ="10" in="BEVEL" result="OFFSET" />
+
+<!-- merge offset with Source: -->
+
+<feMerge>
+   <feMergeNode in="OFFSET" />
+   <feMergeNode in="SourceGraphic" />
+</feMerge>
+
+<!-- 2. create a displacement map that takes the fractal fill as an input to distort the target: -->
+
+<feDisplacementMap in="SourceGraphic" in2="TURBULENCE" scale="9" />
+
+<!-- Offset the input graphic by the amount defined in its "dx" and "dy" attributes: -->
+</filter>
+  </defs>
+
+  <g class="filtered">
+    <text x="0" y="0" transform="rotate(-12)">Petrol</text>
+  </g>
+</svg>
   
   <section class = "container">
 
 <h1> Kraftwerk – Nummern </h1>
   <div class = "selection_1"> </div>
-  <div class = "footer"> <p>2017 – FHP – David Röttger </div>
+<!--   <div class = "footer"> <p>2017 – FHP – David Röttger </div> -->
 
   </section>
 

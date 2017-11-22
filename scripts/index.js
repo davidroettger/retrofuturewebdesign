@@ -1,7 +1,7 @@
 
 var gedicht = {
   titel:"Kraftwerk – Nummern",
-  strophen: ["Eins, zwei, drei, vier   Fünf, sechs, sieben, acht    Uno, due    Três, quatro    One, two    Ichi, ni, san, chi    Adjin, dva, tri   Li, tva, tri"] 
+  strophen: ["Eins","zwei", "drei", "vier"  ,"Fünf", "sechs", "sieben", "acht"   ,"Uno", "due"   ,"Três", "quatro" ,"One", "two  Ichi, ni, san, chi    Adjin, dva, tri   Li, tva, tri"] 
  }
 
 // Object Prototype / Constructor / Argument ist eine Div ID / 
@@ -26,7 +26,7 @@ function Divs(idofdiv,numberofdivs)  {
   this.scaleClasses = function () {
     for (var i = 0; i < numberofdivs; i++) {
       var selector = document.querySelector(".innerlayer_"+i);
-      selector.style.transform = "scale(" + i/550 + ")" 
+      selector.style.transform = "scale(" + 1 + ")" 
     }
   }
   // looks for classes and change rotate properties of the outer div
@@ -52,13 +52,10 @@ function Divs(idofdiv,numberofdivs)  {
     for (var i = 0; i < numberofdivs; i++) { 
       (function() {
       var selector = document.querySelector(".outerlayer_"+i);
-      selector.addEventListener("click", function(){
-        var text = document.createTextNode(gedicht.strophen[0]);
+      selector.addEventListener("mouseover", function(){
         selector.classList.toggle("zoom");
-        selector.appendChild(text);
-      }
-
-        )
+      })
+      
       }());
 
     }     
@@ -75,15 +72,23 @@ function getRandomArbitrary(min, max) {
 
 // Initialize new Divs Object
 
-var divs =  new Divs(".selection_1",3000);
+var divs =  new Divs(".selection_1",10);
 
-console.log(divs.idofdiv);
 
 // Execute Method of divs Object
 divs.creatediv();
-divs.scaleClasses();
-divs.rotateOuterDivs();
-divs.pickandcolorclass();
+divs.addEventListenerRect();
+
+
+
+for (let i = 0; i < 10; i++) { 
+var text = document.createTextNode(gedicht.strophen[i]);
+var pele = document.createElement("P");
+document.querySelector(".innerlayer_"+i).appendChild(pele).appendChild(text);
+}
+
+
+
 // divs.addEventListenerRect();
 
 

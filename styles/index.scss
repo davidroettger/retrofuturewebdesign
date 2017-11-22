@@ -1,24 +1,31 @@
 /* Import dependency (from node_modules) … */
 @import "normalize.css";
 
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 $border-width: 4px;
 
 /* Your styles here … */
 
-
-h1 {
-
-}
-
 .container {
 	padding:10px;
-	font-family: 'Ubuntu Mono', monospace;
-	font-family: 'VT323', monospace;
+	font-family: 'Press Start 2P', cursive;
 	perspective: 20px;
 	padding: 0 5vw;
-	font-size:25px;
-	font-weight:200;
+	font-size:32px;
+}
 
+svg {
+	display:none;
+}
+
+
+div {
+	float:left;
+}
+
+p {
+	margin: 20px 50px;
 }
 
 .outerlayer {
@@ -30,7 +37,9 @@ h1 {
 	background-image:url("../assets/panther.jpg");
 	background-repeat:no-repeat;
 	transition: transform 0.1s ease-out;
-	background-position: 30% 75%;
+	background-position:50% 75%;
+
+
 }
 
 .moveouter {
@@ -38,10 +47,7 @@ h1 {
 	transition: transform 0.2s ease-out;
 }
 
-
 .innerlayer {
-	//border: 1px solid blue;
-	position:relative;
 	transform: translate3d(200px,-1px,0);
 	transition: transform 0.2s ease-out;
 }
@@ -56,23 +62,8 @@ h1 {
 }
 
 .clicked p {
-	transform: scale(2.0); 
+	transform: scale(1.5); 
 	}
-
-p {
-	font-size:20px;
-	padding:1em;
-}
-
-
-
-.selection_1 div {
-	width:25px;
-	float:left;
-	height:25px;
-	border:1px solid black;
-	transition: transform 1s ease-out;
-}
 
 .rotate {
 	transform:rotate(45deg);
@@ -80,6 +71,7 @@ p {
 
 .zoom {
 	transition: transform 1s ease-out;
-	transform:scale(5) translate3d(10vw,10vh,0);
+	transform:perspective(500px) translate3d(20px, 0, 0px);
 	z-index:100;
+	filter:(#myfilter);
 }
