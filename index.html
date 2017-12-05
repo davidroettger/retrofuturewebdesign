@@ -17,57 +17,121 @@
 
 <body>
 
-  <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <style type="text/css">
-      <![CDATA[
-        .filtered{
-          filter: url(#myfilter);
-          …
-        }
-      ]]>
-    </style>
+<div class = "container">
+    <div id="header"></div>
+    
+    <div id="content">
+    
+      <h1 class="content__h1"> Kraftwerk – Nummern </h1>  
 
-    <filter id="myfilter">
-      
-<feConvolveMatrix order="4,4" 
-   kernelMatrix="
-   1 1 1 1
-   0 1 0 1
-   1 1 1 1 
-   1 0 0 1" in="SourceAlpha" result="BEVEL" />
-
-<!-- offset extrusion: -->
-
-<feOffset dx="10" dy ="10" in="BEVEL" result="OFFSET" />
-
-<!-- merge offset with Source: -->
-
-<feMerge>
-   <feMergeNode in="OFFSET" />
-   <feMergeNode in="SourceGraphic" />
-</feMerge>
-
-<!-- 2. create a displacement map that takes the fractal fill as an input to distort the target: -->
-
-<feDisplacementMap in="SourceGraphic" in2="TURBULENCE" scale="9" />
-
-<!-- Offset the input graphic by the amount defined in its "dx" and "dy" attributes: -->
-</filter>
-  </defs>
-
-  <g class="filtered">
-    <text x="0" y="0" transform="rotate(-12)">Petrol</text>
-  </g>
-</svg>
   
-  <section class = "container">
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+        
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
 
-<h1> Kraftwerk – Nummern </h1>
-  <div class = "selection_1"> </div>
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+        
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+        <p class="content__strophe ">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+        <p class="content__strophe  content__strophe--first">
+        Eins, zwei, drei, vier<br>
+        Fünf, sechs, sieben, acht<br>
+        Uno, due<br>
+        Três, quatro<br>
+        One, two<br>
+        Ichi, ni, san, chi<br>
+        Adjin, dva, tri<br>
+        Li, tva, tri<br>
+        </p>
+
+
+  </div>
+
+</div>
 <!--   <div class = "footer"> <p>2017 – FHP – David Röttger </div> -->
 
-  </section>
+</section>
 
   <script type="text/javascript" src="./scripts/index.js"></script>
 </body>

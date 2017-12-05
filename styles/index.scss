@@ -7,71 +7,81 @@ $border-width: 4px;
 
 /* Your styles here … */
 
+html {
+	background:#0066cb;
+}
+
 .container {
-	padding:10px;
-	font-family: 'Press Start 2P', cursive;
-	perspective: 20px;
-	padding: 0 5vw;
-	font-size:32px;
-}
-
-svg {
-	display:none;
-}
-
-
-div {
-	float:left;
-}
-
-p {
-	margin: 20px 50px;
-}
-
-.outerlayer {
-	//border: 1px solid black;
-	max-width: 200px; 
-	//height: 100px; 
-	position: absolute;
-	overflow:hidden; 
-	background-image:url("../assets/panther.jpg");
-	background-repeat:no-repeat;
-	transition: transform 0.1s ease-out;
-	background-position:50% 75%;
-
+	width:90%;
+	margin: 0 auto;
 
 }
 
-.moveouter {
-	transform: perspective(500px) translate3d(10vw,28vh,0) scale(2);
-	transition: transform 0.2s ease-out;
+#content {
+	position:absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	transform-style: preserve-3d;
+	perspective: 200px;
 }
 
-.innerlayer {
-	transform: translate3d(200px,-1px,0);
-	transition: transform 0.2s ease-out;
+.content__h1 {
+	position:absolute;
+	font-size:36px;
+	font-family: 'Press Start 2P';
+	z-index:10;
+	background:white;
+	padding-left:10px;
 }
 
-.colored {
-	background-color:red;
-	opacity:1;
+.content__strophe {
+	font-family: 'Press Start 2P';
+	display:block;
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	font-size:72px;
+	color:white;
+	line-height: 80px;
+	text-align: center;
 }
 
-.move {
-	transform: translate3d(-1px,-1px,0);
+
+$i: 1;
+$NUM_LAYERS: 9;
+@for $i from 1 through $NUM_LAYERS {
+  .content__strophe:nth-child(#{$i}){
+    transform: translateZ(($i - 1) * -3px);
+  }
 }
 
-.clicked p {
-	transform: scale(1.5); 
-	}
 
-.rotate {
-	transform:rotate(45deg);
+.content__strophe--animate {
+	animation:translate--fadeout 2s steps(10) infinite;
 }
 
-.zoom {
-	transition: transform 1s ease-out;
-	transform:perspective(500px) translate3d(20px, 0, 0px);
-	z-index:100;
-	filter:(#myfilter);
+
+.content__strophe--animate::after {
+	content:"12345678";
+	color:black;
+	position:absolute;
+	top:50%;
+	left:20%;
 }
+
+
+
+.content__strophe--first {
+  color: red;
+  text-shadow: none;
+}
+
+ .content__strophe:nth-child(#{2}){
+    transform: translateZ(($i - 1) * -1px);
+ }
+
+
+@keyframes translate--fadeout {
+  0%   { opacity: scale(1)}
+  100% 	{ transform: scale(10)}
+}
+
